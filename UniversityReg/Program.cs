@@ -60,15 +60,11 @@ namespace UniversityReg
                         {
                             var course = new Course();
                             course.title = reader["CourseName"].ToString();
-
-
                             listOfCourses.Add(course);
-                        }
-                        
+                        }                        
                     }
                 }
             }
-
             return listOfCourses;
         }
     }

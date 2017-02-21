@@ -55,13 +55,12 @@ namespace UniversityReg
                         dr.Close();
                         return false;
                     }
-                    else
-                        return true;
+                    
                 }
                 dr.Close();
             }
             
-            return true;
+            return false;
         }
             
         

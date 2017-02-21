@@ -10,8 +10,19 @@ namespace MikesUniversity.Controllers
     public class HomeController : Controller
     {
         // GET: Home
+        [HttpGet]
+        public ActionResult Index()
+        {
+            return View();
+        }
+        [HttpPost]
         public ActionResult Index(Student m)
         {
+            UniversityConnection.LoginCheck(m);
+            if(m = false)
+            {
+
+            }
             return View();
         }
         public ActionResult MainPage()

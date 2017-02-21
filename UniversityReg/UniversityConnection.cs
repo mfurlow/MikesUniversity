@@ -41,26 +41,15 @@ namespace UniversityReg
             string connectionString = GetConnectionString();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                SqlCommand Command = new SqlCommand(query1, conn);
+                SqlCommand Cmd = new SqlCommand(query1, conn);
 
+                Cmd.Parameters.
                 conn.Open();
-                SqlDataReader dr = Command.ExecuteReader();
-                while (dr.Read())
-                {
-                    string email = (string)dr["Email"];
-                    string password = (string)dr["Password"];
-                    if (email != student.email && password != student.password)
-                    {
+                SqlDataReader dr = Cmd.ExecuteReader();
 
-                        dr.Close();
-                        return false;
-                    }
-                    
-                }
-                dr.Close();
+
+                return false;
             }
-            
-            return false;
         }
             
         

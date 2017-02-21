@@ -19,10 +19,8 @@ namespace MikesUniversity.Controllers
         public ActionResult Index(Student m)
         {
             UniversityConnection.LoginCheck(m);
-            if(m = false)
-            {
-
-            }
+            if()
+            
             return View();
         }
         public ActionResult MainPage()

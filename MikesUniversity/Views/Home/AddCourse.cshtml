@@ -1,0 +1,32 @@
+﻿@model MikesUniversity.Models.Courses
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddCourse</title>
+</head>
+<body>
+    <div class="panel-heading text-center"><h4>ADD COURSE</h4></div>
+    <br/>
+    <br/>
+    <br/>
+    <div class="text-center"> Please select a course from the drop down menu to register</div>
+    <br />
+    <br />
+    <br />
+    @Html.DropDownListFor(x => x.CourseName, new[] {
+                            new SelectListItem() {Text = "Student",
+                                Value = bool.TrueString},
+                            new SelectListItem() {Text = "Administrator",
+                                Value = bool.FalseString}
+                        }, "Choose an option", new { @class = "form-control" })
+    <div> 
+    </div>
+</body>
+</html>

@@ -14,6 +14,15 @@ namespace MikesUniversity.Controllers
         {
             return View();
         }
+        public ActionResult MainPage()
+        {
+            return View();
+        }
+
+        public ActionResult AddCourse()
+        {
+            return View();
+        }
         [HttpGet]
         public ActionResult AddStudent()
         {

@@ -1,0 +1,29 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/Scripts/jquery")
+</head>
+<body>
+    <nav class="navbar">
+
+        <ul class="nav navbar-nav">
+            <li>
+                @Html.ActionLink("home", "Index", "Home")
+            </li>
+            <li>
+                @Html.ActionLink("Add Student", "AddStudent", "Home")
+            </li>
+
+        </ul>
+
+    </nav>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

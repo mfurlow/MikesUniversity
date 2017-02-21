@@ -9,15 +9,21 @@ namespace UniversityReg
     
         public class Course
         {
-            private string title;
+        public string title { get; set; }
+        public string title1;
             private string major;
             private DateTime timeOfDay;
             private int creditHour;
             public bool isClosed;
 
-            public Course(string title, DateTime timeOfDay, int creditHour = 1, string major = "Elective")
+        public Course()
+        {
+
+        }
+        
+        public Course(string title1, DateTime timeOfDay, int creditHour = 1, string major = "Elective")
             {
-                this.title = title;
+                this.title1 = title;
                 this.major = major;
                 this.timeOfDay = timeOfDay;
                 this.creditHour = creditHour;

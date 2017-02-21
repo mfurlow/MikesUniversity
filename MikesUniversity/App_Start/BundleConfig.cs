@@ -12,7 +12,7 @@ namespace MikesUniversity.App_Start
         {
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/*.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/client-featuresscripts").Include("~/Scripts/jquery-{version}.js",
+            bundles.Add(new ScriptBundle("~/bundles/clientfeaturesscripts").Include("~/Scripts/jquery-{version}.js",
                 "~/Scripts/jquery.validate.js",
                 "~/Scripts/jquery.validate.unobtrusive.js",
                 "~/Scripts/jquery.unobtrusive-ajax.js"));

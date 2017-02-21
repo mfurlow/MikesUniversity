@@ -23,8 +23,11 @@
     </style>
 </head>
 <body>
+    
     <div class="text-center">
         <h2>Mike's School Of Hard Knocks</h2>
+        <br/>
+        <br/>
         <h3>Please sign in or register</h3>
         <br />
         <br />
@@ -37,10 +40,11 @@
             @Html.TextBoxFor(x => x.Pword)
         </div>
         <div class="btn btn-success">
-            @Html.ActionLink("Sign in", "ViewSchedule")
+            @Html.ActionLink("Sign in", "MainPage","Home")
         </div>
         <div class="btn btn-success">
             @Html.ActionLink("Register", "AddStudent")
+        </div>
         </div>
 </body>
 </html>

@@ -16,12 +16,10 @@ namespace MikesUniversity.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index(Student m)
+        public ActionResult Index(string e,string p)
         {
-            UniversityConnection.LoginCheck(m);
-            if()
             
-            return View();
+                return View();
         }
         public ActionResult MainPage()
         {

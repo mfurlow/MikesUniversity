@@ -12,7 +12,7 @@ namespace UniversityReg
         public string title { get; set; }
         public string title1;
             private string major;
-            private DateTime timeOfDay;
+            private DateTime TimeOfDay;
             private int creditHour;
             public bool isClosed;
 
@@ -25,7 +25,7 @@ namespace UniversityReg
             {
                 this.title1 = title;
                 this.major = major;
-                this.timeOfDay = timeOfDay;
+                this.TimeOfDay = timeOfDay;
                 this.creditHour = creditHour;
                 //  this.id = id;
             }

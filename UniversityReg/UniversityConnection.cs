@@ -36,23 +36,43 @@ namespace UniversityReg
             }
 
         }
-        public static bool LoginCheck(Student student)
+        public static string LoginCheck(string email, string pword)
         {
+            string check;
             string connectionString = GetConnectionString();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                SqlCommand Cmd = new SqlCommand(query1, conn);
+                SqlCommand cmd = new SqlCommand("LoginCheck3", conn);           
+              //  SqlCommand Cmd = new SqlCommand(query1, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@pword", pword);
 
-                Cmd.Parameters.
-                conn.Open();
-                SqlDataReader dr = Cmd.ExecuteReader();
+                SqlParameter rtrnValue = new SqlParameter();
+                rtrnValue.Direction = ParameterDirection.ReturnValue;
+                cmd.Parameters.Add(rtrnValue);
 
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    if(email = )
+                    check = (string)rtrnValue.Value;
+                    
+                    
+                }
+                catch(Exception ex)
+                {
+                    check = "0";
+                }
+                conn.Close();
+                    
+                return check;
+            }           
 
-                return false;
-            }
         }
-            
-        
+
+
         public static string GetConnectionString()
         {
             return "Data Source = firstdatabase.ckfyvy05mrkv.us-west-2.rds.amazonaws.com,1433; Initial Catalog = RegistrationApplication; Persist Security Info = True; User Id = mike; Password = Midnightcj1; Encrypt = False;";

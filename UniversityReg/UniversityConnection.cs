@@ -11,6 +11,11 @@ namespace UniversityReg
     
     public static class UniversityConnection
     {
+        public static string GetConnectionString()
+        {
+            return "Data Source = firstdatabase.ckfyvy05mrkv.us-west-2.rds.amazonaws.com,1433; Initial Catalog = RegistrationApplication; Persist Security Info = True; User Id = mike; Password = Midnightcj1; Encrypt = False;";
+        }
+
         public static string query1 = "SELECT * FROM Student";
         /// <summary>
         /// This is where the connectin to the database is established
@@ -80,10 +85,7 @@ namespace UniversityReg
                 return check;
             }           
         }
-        public static string GetConnectionString()
-        {
-            return "Data Source = firstdatabase.ckfyvy05mrkv.us-west-2.rds.amazonaws.com,1433; Initial Catalog = RegistrationApplication; Persist Security Info = True; User Id = mike; Password = Midnightcj1; Encrypt = False;";
-        }
+        
 
         /// <summary>
         /// This will add a student to the database
@@ -145,6 +147,9 @@ namespace UniversityReg
             return "";
         }
 
+        /// <summary>
+        /// This gets the Course table from the
+        /// </summary>
         public class ConnectionCourses
         {
 

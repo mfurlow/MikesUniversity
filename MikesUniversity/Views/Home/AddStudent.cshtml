@@ -1,7 +1,7 @@
 ﻿@model MikesUniversity.Models.StudentModel
 
 @{
-    Layout = null;
+    Layout = "~/Views/_LayoutPage.cshtml";
 }
 
 <!DOCTYPE html>
@@ -37,12 +37,13 @@
                     <label>Password:</label>
                     @Html.TextBoxFor(x => x.Pword)
                 </div>
+               
                 <div class="form-group">
                     <label>Will you attend?</label>
                     @Html.DropDownListFor(x => x.accType, new[] {
-                            new SelectListItem() {Text = "Student",
+                            new SelectListItem() {Text = "Yes",
                                 Value = bool.TrueString},
-                            new SelectListItem() {Text = "Administrator",
+                            new SelectListItem() {Text = "No",
                                 Value = bool.FalseString}
                         }, "Choose an option", new { @class = "form-control" })
                 </div>

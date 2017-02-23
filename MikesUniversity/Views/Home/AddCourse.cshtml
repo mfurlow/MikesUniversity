@@ -1,7 +1,7 @@
 ﻿@model MikesUniversity.Models.Courses
 
 @{
-    Layout = null;
+    Layout = "~/Views/_LayoutPage.cshtml";
 }
 
 <!DOCTYPE html>
@@ -21,11 +21,39 @@
     <br />
     <br />
     @Html.DropDownListFor(x => x.CourseName, new[] {
-                            new SelectListItem() {Text = "Student",
+                            new SelectListItem() {Text = "Java",
                                 Value = bool.TrueString},
-                            new SelectListItem() {Text = "Administrator",
-                                Value = bool.FalseString}
+                            new SelectListItem() {Text = "Computer Organizations",
+                                Value = bool.FalseString},
+                            new SelectListItem() {Text = "Intro to Computer Science",
+                                Value = bool.FalseString},
+                            new SelectListItem() {Text = "Computer Organizations",
+                                Value = bool.FalseString},
+                            new SelectListItem() {Text = "Differential Equations",
+                                Value = bool.FalseString},
+                            new SelectListItem() {Text = "Geometry",
+                                Value = bool.FalseString},
+                            new SelectListItem() {Text = "Circuits",
+                                Value = bool.FalseString},
+                            new SelectListItem() {Text = "Digital Design and Logics",
+                                Value = bool.FalseString},
+                            new SelectListItem() {Text = "Circuits Lab",
+                                Value = bool.FalseString},
+                            new SelectListItem() {Text = "Circuits",
+                                Value = bool.FalseString},
+                            new SelectListItem() {Text = "Speech",
+                                Value = bool.FalseString},
+                            new SelectListItem() {Text = "Journalism",
+                                Value = bool.FalseString},
+                            new SelectListItem() {Text = "Creative Writing",
+                                Value = bool.FalseString},
                         }, "Choose an option", new { @class = "form-control" })
+
+    <br/>
+    <br/>
+    <div class="btn btn-success">
+        <button type="submit" class="btn btn-success ">Submit</button>
+    </div>
     <div> 
     </div>
 </body>

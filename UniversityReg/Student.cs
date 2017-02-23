@@ -8,7 +8,7 @@ namespace UniversityReg
 {
     public class Student : Users
     {
-        private int major;
+        public int major;
         private bool isFulltime;
         private string registeredCourses;
         Dictionary<string, Course> classes = new Dictionary<string, Course>();
@@ -18,9 +18,9 @@ namespace UniversityReg
 
         }
 
-        public Student(string Fname, string Lname, string password, string email) : base(Fname, Lname, password, email)
+        public Student(string Fname, string Lname,  string email, string password) : base(Fname, Lname, password, email)
         {
-            this.major = major;
+          //  this.major = major;
             isFulltime = false;
         }
         public override string GetInfo()

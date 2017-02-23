@@ -13,8 +13,9 @@ namespace UniversityReg
         static void Main(string[] args)
         {
 
-         int num =  int.Parse(Console.ReadLine());
-            UniversityConnection.ViewSchedule(num);
+            //Student num = new Student();  
+            //;
+            //UniversityConnection.ViewSchedule();
             //var listOfCourses = new List<Course>();
             
 

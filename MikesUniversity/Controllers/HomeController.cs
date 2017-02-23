@@ -35,11 +35,19 @@ namespace MikesUniversity.Controllers
         
                 return View();
         }
+        /// <summary>
+        /// This Action method shows the view where the user is able to check his schedule or add a class
+        /// </summary>
+        /// <returns></returns>
         public ActionResult MainPage()
         {
             return View();
         }
 
+        /// <summary>
+        /// This is where there is a drop down menu for the student to select a course to add
+        /// </summary>
+        /// <returns></returns>
         public ActionResult AddCourse()
         {
             return View();
@@ -59,6 +67,7 @@ namespace MikesUniversity.Controllers
             }
             return View();
         }
+
         public ActionResult ViewSchedule(StudentModel m)
         {
             UniversityConnection.ViewSchedule(m.Studentid);
@@ -82,14 +91,13 @@ namespace MikesUniversity.Controllers
                 {
                     CourseId = Convert.ToInt32(dr["CourseId"]),
                     CourseName = dr["CourseName"].ToString(),
-                  //  CourseTime = dr["Course Time"].ToString(),                    
+                    //  CourseTime = dr["Course Time"].ToString(),                    
                     CreditHour = Convert.ToInt32(dr["CreditHour"]),
                     Major_Id = Convert.ToInt32(dr["Major_Id"])
                 });
             }
             return View(lmd);
         }
-
 
     }
 }

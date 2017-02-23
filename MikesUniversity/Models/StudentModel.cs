@@ -23,6 +23,8 @@ namespace MikesUniversity.Models
 
         [Required(ErrorMessage = "Please enter your password")]
         public string Pword { get; set; }
+        [Required(ErrorMessage = "Please enter your MajorId")]
+        public string MajorId { get; set; }
 
         [Required(ErrorMessage = "Please select student or administrator")]
         public bool? accType { get; set; }

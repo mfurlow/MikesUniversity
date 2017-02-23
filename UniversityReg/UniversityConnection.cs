@@ -12,6 +12,9 @@ namespace UniversityReg
     public static class UniversityConnection
     {
         public static string query1 = "SELECT * FROM Student";
+        /// <summary>
+        /// This is where the connectin to the database is established
+        /// </summary>
         public static void OpenSqlConnection()
         {
             string connectionString = GetConnectionString();
@@ -22,7 +25,12 @@ namespace UniversityReg
                 connection.Open();
             }
         }
-
+        /// <summary>
+        ///     Disconnected Architecture that connects to the database
+        /// </summary>
+        /// <param name="con"></param>
+        /// <param name="query"></param>
+        /// <returns></returns>
         public static DataSet GetDisconnectedResults(string con, string query)
         {
             using (SqlConnection sqlcon = new SqlConnection(con))
@@ -36,6 +44,12 @@ namespace UniversityReg
             }
 
         }
+        /// <summary>
+        /// This checks the username and the password that the user inputs against the database
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="pword"></param>
+        /// <returns></returns>
         public static bool LoginCheck(string email, string pword)
         {
             bool check;
@@ -71,11 +85,20 @@ namespace UniversityReg
             return "Data Source = firstdatabase.ckfyvy05mrkv.us-west-2.rds.amazonaws.com,1433; Initial Catalog = RegistrationApplication; Persist Security Info = True; User Id = mike; Password = Midnightcj1; Encrypt = False;";
         }
 
+        /// <summary>
+        /// This will add a student to the database
+        /// </summary>
+        /// <param name="student"></param>
+        /// <returns></returns>
         public static string AddStudent(Student student)
         {
-            return "INSERT INTO [Student]VALUES(" + student.Fname + ',' + student.Lname + ',' + student.email + ',' + student.password + ')';
+            return "EXEC AddNStudent1 @fname = '" + student.Fname + "',@lname ='" + student.Lname + "',@email ='" + student.email + "',@pword = '" + student.password + "'" ;
         }
-        public static void ViewSchedule(int me)
+        /// <summary>
+        /// This returns the schedule for the given student using a stored procedure
+        /// </summary>
+        /// <param name="stuId"></param>
+        public static void ViewSchedule(int stuId)
         {
             string connection = GetConnectionString();
               
@@ -83,7 +106,7 @@ namespace UniversityReg
             {
                 SqlCommand command = new SqlCommand("StudentSchedule", sqlcon);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@studentId", me);
+                command.Parameters.AddWithValue("@studentId", stuId);
                 try
                 {
                     sqlcon.Open();
@@ -103,7 +126,20 @@ namespace UniversityReg
             }
             
         }
-    
+        public static DataSet StudentSchedule()
+        {
+            string connectionString = GetConnectionString();
+            SqlConnection con = new SqlConnection(connectionString);
+            SqlCommand cmd = new SqlCommand("StudentSchedule", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = cmd;
+            DataSet dsCourses = new DataSet();
+
+            da.Fill(dsCourses);
+            return dsCourses;
+        }
+
         public static string AddCourse(Course c)
         {
             return "";
@@ -126,9 +162,6 @@ namespace UniversityReg
                 return dsCourses;
             }
         }
-        //public static void RegisterNewStudent()
-        //{
-        //    GetDisconnectedResults((GetConnectionString(), AddStudent(student)));
-        //}
-    }
+
+     }
 }

@@ -1,4 +1,4 @@
-﻿
+﻿@model MikesUniversity.Models.StudentModel
 @{
     Layout = null;
 }
@@ -29,11 +29,14 @@
             <h1>Mike's School Of Hard Knocks</h1>
             <br/>
             <br/>
-            <h3> Thank you for signing in, Please make a selection below</h3>
+            <h3> Thank you signing in, Please make a selection below</h3>
         </div>
         <br/>
         <br />
         <br />
+        
+        @Html.TextBox("fullname", (string)ViewBag.email)
+        @Html.TextBox("lastname", (string)ViewBag.pword)
         <br />
 
         <div class="btn btn-primary">

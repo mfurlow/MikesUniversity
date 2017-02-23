@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MikesUniversity.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,9 +17,17 @@ namespace MikesUniversity.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index(string e,string p)
+        public ActionResult Index(StudentModel s)
         {
-            
+            if (UniversityConnection.LoginCheck(s.Email, s.Pword) == true)
+            {
+                ViewBag.email = s.Email;
+                ViewBag.pword = s.Pword;
+
+                return RedirectToAction("MainPage","Home");//placeholder
+            }
+            else
+        
                 return View();
         }
         public ActionResult MainPage()
@@ -45,8 +54,9 @@ namespace MikesUniversity.Controllers
             }
             return View();
         }
-        public ActionResult ViewSchedule()
+        public ActionResult ViewSchedule(StudentModel m)
         {
+            UniversityConnection.ViewSchedule(m.Studentid);
             return View();
         }
 

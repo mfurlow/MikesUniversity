@@ -33,20 +33,23 @@
         <br />
         @using (Html.BeginForm())
         {
-        <div class="form-group">
-            <label>User Name:</label>
-            @Html.TextBoxFor(x => x.Email)
-        </div>
-        <div class="form-group">
-            <label>Password:</label>
-            @Html.TextBoxFor(x => x.Pword)
-        </div>
+            <div class="form-group">
+                <label>User Name:</label>
+                @Html.TextBoxFor(x => x.Email)
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                @Html.TextBoxFor(x => x.Pword)
+            </div>
+
+            <div class="btn btn-success">
+                <button type="submit" class="btn btn-success btn-lg"></button>
+            </div>
         }
-        <div class="btn btn-success">
-            <button type="submit" class="btn btn-success btn-lg"></button>
 
 
-</div>
+
+        
         <div class="btn btn-success">
             @Html.ActionLink("Register", "AddStudent")
         </div>

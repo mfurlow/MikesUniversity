@@ -1,0 +1,89 @@
+﻿@model IEnumerable<MikesUniversity.Models.Courses>
+
+@{
+    Layout = "~/Views/_LayoutPage.cshtml";
+}
+
+<!DOCTYPE html>
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/Scripts/jquery")
+
+<head>
+   
+    <meta name="viewport" content="width=device-width" />
+    <title>ViewCourses</title>
+    <style>
+        .btn a {
+            color: white;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #F1F1F1;
+        }
+    </style>
+</head>
+
+<Body>
+    
+
+
+
+
+    
+  
+</Body>
+
+@{
+    ViewBag.Title = "Courses Grid";
+
+    WebGrid grid2 = new WebGrid(Model, rowsPerPage: 15);
+}
+@*<h4>Class Schedule</h4>*@
+
+
+<style>
+    input[type="file"] {
+        margin: 0 0 1em 0;
+    }
+
+    .grid {
+        margin: 0;
+        border-collapse: collapse;
+        width: 50%;
+        font-family: 'Times New Roman', serif;
+    }
+
+        .grid th, .grid td {
+            border: 1px solid #C0C0C0;
+            padding: 5px;
+        }
+
+    .head {
+        background-color: #E8E8E8;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .alt {
+        background-color: #f8f8f8;
+        color: #000;
+    }
+</style>
+
+<table class="table table-striped">
+    @grid2.GetHtml(
+        tableStyle: "grid",
+        headerStyle: "head",
+        alternatingRowStyle: "alt",
+        columns: grid2.Columns(
+            grid2.Column("CourseId"),
+            grid2.Column("CourseName"),
+            grid2.Column("CreditHour"),
+            grid2.Column("Major_Id")
+            
+       )
+    )
+</table>
+
+

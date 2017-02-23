@@ -186,6 +186,7 @@
     <Content Include="Views\_LayoutPage.cshtml" />
     <Content Include="Views\Home\AddCourse.cshtml" />
     <Content Include="Views\Home\ViewSchedule.cshtml" />
+    <Content Include="Views\Home\ViewCourses.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

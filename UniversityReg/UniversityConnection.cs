@@ -109,6 +109,23 @@ namespace UniversityReg
             return "";
         }
 
+        public class ConnectionCourses
+        {
+
+            public DataSet CoursesTable()
+            {
+                string connectionString = GetConnectionString();
+                SqlConnection con = new SqlConnection(connectionString);
+                SqlCommand cmd = new SqlCommand("select * from Course", con);
+                cmd.CommandType = CommandType.Text;
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+                DataSet dsCourses = new DataSet();
+
+                da.Fill(dsCourses);
+                return dsCourses;
+            }
+        }
         //public static void RegisterNewStudent()
         //{
         //    GetDisconnectedResults((GetConnectionString(), AddStudent(student)));

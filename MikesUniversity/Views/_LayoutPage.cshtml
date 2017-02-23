@@ -9,18 +9,19 @@
     @Scripts.Render("~/Scripts/jquery")
 </head>
 <body>
-    <nav class="navbar">
-
-        <ul class="nav navbar-nav">
-            <li>
-                @Html.ActionLink("home", "Index", "Home")
-            </li>
-            <li>
-                @Html.ActionLink("Add Student", "AddStudent", "Home")
-            </li>
-
-        </ul>
-
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">MSHK University</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li >@Html.ActionLink("Home", "MainPage", "Home")</li>
+                <li class="active">@Html.ActionLink("Schedule", "ViewSchedule", "Home")</li>
+                <li class="active">@Html.ActionLink("Courses", "ViewCourses", "Home")</li>
+                <li>@Html.ActionLink("Login/Logout", "Index", "Home")</li>
+                
+            </ul>
+        </div>
     </nav>
     <div>
         @RenderBody()
